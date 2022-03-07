@@ -16,15 +16,15 @@
 }
 
 .box {
-    display: flex;
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    justify-content: flex-end;
+    transition: all 1s ease-out;
 }
 
 .box:hover {
-    transition: width 1s, height 1s;
+    transition: all 1s ease-in;
+    transform: scale(1.1);
     width: 125px;
     height: 125px;
 }
