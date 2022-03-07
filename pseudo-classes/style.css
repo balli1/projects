@@ -16,15 +16,30 @@
 }
 
 .box {
+    display: flex;
     border-radius: 50%;
     height: 100px;
     width: 100px;
+    justify-content: flex-end;
 }
 
 .box:hover {
     transition: width 1s, height 1s;
     width: 125px;
     height: 125px;
+}
+
+.box:hover .notif-box {
+    visibility: visible;
+}
+
+.notif-box {
+    height: 10px;
+    width: 10px; 
+    padding: 5px 5px;
+    background-color: red;
+    border-radius: 50%;
+    visibility: hidden;
 }
 
 .box1 { background-color: palevioletred;}
