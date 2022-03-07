@@ -21,6 +21,12 @@
     width: 100px;
 }
 
+.box:hover {
+    transition: width 1s, height 1s;
+    width: 125px;
+    height: 125px;
+}
+
 .box1 { background-color: palevioletred;}
 .box2 { background-color: lightpink;}
 .box3 { background-color: rgb(247, 211, 216);}
