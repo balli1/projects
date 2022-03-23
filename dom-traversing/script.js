@@ -3,9 +3,7 @@
 - Be sure the script.js execution occurs after the elements are created.
 - Log a message in your chrome dev tools to confirm the file is running.
 */
-
-
-
+console.log("hello world");
 
 
 
@@ -16,9 +14,9 @@
 -console.dir your variable and view it's properties
       - this will always appear as an HTML Object with properties
 */
-
-
-
+const varA = document.getElementById('container');
+console.log(varA);
+console.dir(varA);
 
 
 
@@ -28,9 +26,10 @@
 - put it in the container element you selected above
 (view your results in the elements tab of your chrome dev tools)
 */
-
-
-
+const varB = document.createElement('div');
+varB.className = 'box-container';
+varA.appendChild(varB);
+console.log(varA);
 
 
 
