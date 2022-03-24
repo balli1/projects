@@ -15,8 +15,8 @@ console.log("hello world");
       - this will always appear as an HTML Object with properties
 */
 const varA = document.getElementById('container');
-console.log(varA);
-console.dir(varA);
+// console.log(varA);
+// console.dir(varA);
 
 
 
@@ -29,7 +29,7 @@ console.dir(varA);
 const varB = document.createElement('div');
 varB.className = 'box-container';
 varA.appendChild(varB);
-console.log(varA);
+// console.log(varA);
 
 
 
@@ -40,10 +40,16 @@ console.log(varA);
     - add a data attribute called 'number' (data-number) equal to the index + 1
        - if index + 1 is greater then 10 set value to 0
 */
-
-
-
-
+for (i=0; i<10; i++){
+    const varC = document.createElement('div');
+    varC.className = `box box'${i}'`;
+    varC.dataset.number = i + 1; 
+    if (varC.dataset.number > 10) {
+        varC.dataset.number = 0;
+    }
+    varB.appendChild(varC);
+}
+console.log(varB);
 
 
 /* (5)
