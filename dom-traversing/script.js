@@ -15,8 +15,8 @@ console.log("hello world");
       - this will always appear as an HTML Object with properties
 */
 const varA = document.getElementById('container');
-// console.log(varA);
-// console.dir(varA);
+console.log(varA);
+console.dir(varA);
 
 
 
@@ -29,7 +29,7 @@ const varA = document.getElementById('container');
 const varB = document.createElement('div');
 varB.className = 'box-container';
 varA.appendChild(varB);
-// console.log(varA);
+console.log(varA); // to test
 
 
 
@@ -47,9 +47,10 @@ for (i=0; i<10; i++){
     if (varC.dataset.number > 10) {
         varC.dataset.number = 0;
     }
-    varB.appendChild(varC);
+    varB.appendChild(varC); 
 }
-console.log(varB);
+console.log(varB); // to test
+
 
 
 /* (5)
@@ -57,9 +58,11 @@ console.log(varB);
     - select the children of this element
     - iterate over the children and set the internal HTML to the value found in it's data-number attribute
 */
-
-
-
+const collection = varB.children;
+for (i=0; i<10; i++){
+    collection[i].innerHTML = collection[i].dataset.number; 
+}
+console.log(collection); // to test
 
 
 
