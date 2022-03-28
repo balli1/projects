@@ -29,7 +29,7 @@ console.dir(varA);
 const varB = document.createElement('div');
 varB.className = 'box-container';
 varA.appendChild(varB);
-console.log(varA); // to test
+// console.log(varA); // to test
 
 
 
@@ -39,17 +39,18 @@ console.log(varA); // to test
     - append the elements to the box-container div you created above
     - add a data attribute called 'number' (data-number) equal to the index + 1
        - if index + 1 is greater then 10 set value to 0
+    - CORRECTION: if index + 1 is greater than 9 set value to 0 
 */
 for (i=0; i<10; i++){
     const varC = document.createElement('div');
     varC.className = `box box'${i}'`;
     varC.dataset.number = i + 1; 
-    if (varC.dataset.number > 10) {
+    if (varC.dataset.number > 9) {
         varC.dataset.number = 0;
     }
     varB.appendChild(varC); 
 }
-console.log(varB); // to test
+// console.log(varB); // to test
 
 
 
@@ -71,18 +72,24 @@ console.log(collection); // to test
     - create a div with the Id of number-area 
     - add this div as a sibling before the box-container element
 */
-
-
-
+const varD = document.createElement('div');
+varD.id = 'number-area';
+varB.parentNode.insertBefore(varD, varB);
+// console.log(varD.nextSibling); // to test
 
 
 
 /* BONUS!!!
 - set an event listener on every box element where clicking to run a function
 - this function should update the inner value of the #number element with the data-number of the element
+- CORRECTION: update inner HTML of the #number-area element 
 */
+const boxes = document.querySelectorAll('.box');
 
-
-
-
-
+boxes.forEach(box => {
+  box.addEventListener('click', function handleClick(event) {
+    // console.log('box clicked', event); to test 
+    const calc = document.getElementById('number-area');
+    calc.innerHTML = box.dataset.number; 
+  });
+});
