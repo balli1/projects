@@ -43,7 +43,7 @@ varA.appendChild(varB);
 */
 for (i=0; i<10; i++){
     const varC = document.createElement('div');
-    varC.className = `box box'${i}'`;
+    varC.className = `box box${i+1}`;
     varC.dataset.number = i + 1; 
     if (varC.dataset.number > 9) {
         varC.dataset.number = 0;
